@@ -23,7 +23,7 @@ Book.loadAll = rows => {
 }
 
 Book.fetchAll = callback =>
-  $.get(`${__API_URL__}/books`).then(Book.loadAll).then(callback).catch(errorCallback);
+  $.get(`${__API_URL__}books`).then(Book.loadAll).then(callback).catch(errorCallback);
 
 module.Book = Book;
 
