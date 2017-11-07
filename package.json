@@ -1,0 +1,25 @@
+{
+  "name": "book-list-client",
+  "version": "1.0.0",
+  "description": "Book List Client",
+  "main": "book.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/book-app/book-list-client.git"
+  },
+  "keywords": [
+    "book"
+  ],
+  "author": "Will Reid & Jeff Martinez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/book-app/book-list-client/issues"
+  },
+  "homepage": "https://github.com/book-app/book-list-client#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
