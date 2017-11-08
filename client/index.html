@@ -8,12 +8,30 @@
     <link rel="stylesheet" type="text/css" href="styles/layout.css">
     <link rel="stylesheet" type="text/css" href="styles/modules.css">
     <link rel="stylesheet" type="text/css" href="styles/reset.css">
+
+    <script id="book-list-template" type="text/x-handlebars-template">
+      <h2>{{title}}</h2>
+    </script>
   </head>
   <body>
     <h1>Hello Word</h1>
     <p>This is our book app</p>
-    <div class='book-template'>
-      <h2>{{title}}</h2>
-    </div>
+    <main>
+    <section class="error-view container">
+      <h2 class="view-title">This be an issue</h2>
+      <section id="error-message"></section>
+    </section>
+    <section class="book-view container">
+      <h2 class="view-title">My Books</h2>
+      <section class="book-list">
+        <ul id="book-list"></ul>
+      </section>
+    </section>
+  </main>
+  <footer>
+    <aside class="social-links">
+      <ul></ul>
+    </aside>
+  </footer>
   </body>
 </html>
