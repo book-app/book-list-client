@@ -1,21 +1,18 @@
 'use strict';
-
-var app = app || {};
-
-// bookView.create = () => {
-//   var book;
-//   $('')
-// }
+var app = {};
 
 (function(module) {
-  const bookView = {};
+  var bookView = {};
+  bookView.initIndexPage = function() {
+    console.log(bookView.initIndexPage);
+    $('.container').hide();
+    $('.book-view').show();
+    app.Book.all.map(book => $('#book-list').append(book.toHtml()));
+  };
 
-  bookView.initIndexPage = fuction() {
-    $('.container').hide() //more here
-  }
+  $(document).ready(function() {
+    app.Book.fetchAll(bookView.initIndexPage);
+  });
 
-
-
-
-
+  module.bookView = bookView;
 })(app);
