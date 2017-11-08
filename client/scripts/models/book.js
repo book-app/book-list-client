@@ -1,6 +1,7 @@
 'use strict';
+
 var app = app || {};
-var __API_URL__ = 'https://wr-jm-booklist.herokuapp.com/';
+var __API_URL__ = 'https://wr-jm-booklist.herokuapp.com';
 
 (function(module) {
   function errorCallback(err) {
@@ -18,12 +19,15 @@ Book.prototype.toHtml = function() {
 
 Book.all = [];
 
+// Book.loadAll = rows => {
+//   Book.all = rows.map(book => new Book(book));
+// }
 Book.loadAll = rows => {
-  Book.all = rows.map(book => new Book(book));
+  Book.all = rows.sort((a,b) => b.title - a.title).map(book => new Book(book));
 }
 
 Book.fetchAll = callback =>
-  $.get(`${__API_URL__}books`).then(Book.loadAll).then(callback).catch(errorCallback);
+  $.get(`${__API_URL__}/api/v1/books`).then(Book.loadAll).then(callback).catch(errorCallback);
 
 module.Book = Book;
 
