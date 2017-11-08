@@ -1,9 +1,10 @@
 'use strict';
-var app = app || {};
-var __API_URL__ = 'https://wr-jm-booklist.herokuapp.com/';
 
-(function(module) {
-  function errorCallback(err) {
+var app = app || {};
+var __API_URL__ = 'https://wr-jm-booklist.herokuapp.com';
+
+(function (module) {
+  function errorCallback (err) {
     module.errorView.initErrorPage(err);
   }
 
@@ -19,7 +20,7 @@ var __API_URL__ = 'https://wr-jm-booklist.herokuapp.com/';
   Book.all = [];
 
   Book.loadAll = rows => {
-    Book.all = rows.map(book => new Book(book));
+    Book.all = rows.sort((a,b) => b.title - a.title).map(book => new Book(book));
   };
 
   Book.fetchAll = callback =>
