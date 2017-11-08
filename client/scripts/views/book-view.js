@@ -1,15 +1,12 @@
-<<<<<<< HEAD
 'use strict';
 
 var app = app || {};
 
+// bookView.create = () => {
+//   var book;
+//   $('')
+// }
 
-bookView.create = () => {
-  var book;
-  $('')
-}
-=======
-var app = app || {};
 (function(module) {
   const bookView = {};
 
@@ -22,4 +19,3 @@ var app = app || {};
 
 
 })(app);
->>>>>>> 75e20de68123b2ec9f111a98db3f5681b1e0c99a

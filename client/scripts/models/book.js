@@ -13,15 +13,12 @@ var __API_URL__ = 'https://wr-jm-booklist.herokuapp.com';
   }
 
   Book.prototype.toHtml = function() {
-    let template = Handlebars.compile($('.book-template').text());
+    let template = Handlebars.compile($('#book-list-template').text());
     return template(this);
   };
 
   Book.all = [];
 
-  // Book.loadAll = rows => {
-  //   Book.all = rows.map(book => new Book(book));
-  // }
   Book.loadAll = rows => {
     Book.all = rows.sort((a,b) => b.title - a.title).map(book => new Book(book));
   };
