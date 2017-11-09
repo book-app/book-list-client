@@ -14,7 +14,7 @@
     <script type="text/x-handlebars-template" id="error-template">
       <h3>Oops, comething went wrong</h3>
       <p>{{status}}: {{statusText}}</p>
-   </script>
+    </script>
 
     <script id="book-list-template" type="text/x-handlebars-template">
       <li class="book-item">
@@ -33,7 +33,7 @@
        <p>ISBN: {{isbn}}</p>
        <p>image_url: {{image}}</p>
        <p>Desciption: {{description}}</p> -->
-     </li>
+     <!-- </li> -->
     </script>
 
 
@@ -58,19 +58,39 @@
       <section class="book-view container">
        <h3>My Books</h3>
          <ul id="book-list"></ul>
-     </section>
+      </section>
 
+      <section class="detail-view container">
+        <h3>Detail View</h3>
+        <section id="detail view"></section>
+      </section>
 
-      <section class="add-view container">
-        <h3>Add a New Book</h3>
-        <form id="add-form">
-          <input type="text" name="author" placeholder="author">
-          <input type="text" name="title" placeholder="title">
-          <input type="text" name="isbn" placeholder="isbn">
-          <input type="text" name="image_url" placeholder="image_url">
-          <textarea name="description" placeholder="Description of the Book" cols="30" rows="10"></textarea>
-          <button type="submit">Add This Book</button>
-        </form>
+       <section class="add-view container">
+         <h3>Add a New Book</h3>
+         <form id="add-form">
+           <input type="text" name="author" placeholder="author">
+           <input type="text" name="title" placeholder="title">
+           <input type="text" name="isbn" placeholder="isbn">
+           <input type="text" name="image_url" placeholder="image_url">
+           <textarea name="description" placeholder="Description of the Book" cols="30" rows="10"></textarea>
+           <button type="submit">Add This Book</button>
+         </form>
+        </section>
+
+        <section class="update-view container">
+          <h3>Add a New Book</h3>
+          <form id="update-form">
+            <input type="text" name="author" placeholder="author">
+            <input type="text" name="title" placeholder="title">
+            <input type="text" name="isbn" placeholder="isbn">
+            <input type="text" name="image_url" placeholder="image_url">
+            <textarea name="description" placeholder="Description of the Book" cols="30" rows="10"></textarea>
+            <button type="submit">Update This Book</button>
+          </form>
+         </section>
+
+      <section class="admin-view container">
+        <h3>Enter your pin</h3>
       </section>
 
   </main>
