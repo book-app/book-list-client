@@ -19,10 +19,10 @@
     <script id="book-list-template" type="text/x-handlebars-template">
       <li class="book-item">
        <h4>Title: {{title}}</h4>
-       <p>Author: {{about}}</p>
+       <p>Author: {{author}}</p>
        <p>ISBN: {{isbn}}</p>
-       <p>image_url: {{image}}</p>
-       <p>Desciption: {{description}}</p>
+       <img src="{{image_url}}"></img>
+       <!-- <p>Desciption: {{description}}</p> -->
      </li>
     </script>
 
@@ -78,7 +78,7 @@
         </section>
 
         <section class="update-view container">
-          <h3>Add a New Book</h3>
+          <h3>Update Book Details</h3>
           <form id="update-form">
             <input type="text" name="author" placeholder="author">
             <input type="text" name="title" placeholder="title">
