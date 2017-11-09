@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="styles/reset.css">
 
     <script type="text/x-handlebars-template" id="error-template">
-      <h3>Oops, comething went wrong</h3>
+      <h3>Oops, something went wrong</h3>
       <p>{{status}}: {{statusText}}</p>
     </script>
 
@@ -27,13 +27,13 @@
     </script>
 
     <script id="book-detail-template" type="text/x-handlebars-template">
-      <!-- <li class="book-item">
+      <li class="book-item">
        <h4>Title: {{title}}</h4>
-       <p>Author: {{about}}</p>
+       <p>Author: {{author}}</p>
        <p>ISBN: {{isbn}}</p>
-       <p>image_url: {{image}}</p>
-       <p>Desciption: {{description}}</p> -->
-     <!-- </li> -->
+       <img src="{{image_url}}"></img>
+       <p>Desciption: {{description}}</p>
+      </li>
     </script>
 
 
@@ -45,7 +45,7 @@
       <nav class="navigation">
         <ul>
           <li><a href="/">My Books</a></li>
-          <li><a href="/books/new">Add</a></li>
+          <li class="add"><a href="/books/new">Add</a></li>
           <li><a href="/about">About Me</a></li>
         </ul>
       </nav>
@@ -62,7 +62,7 @@
 
       <section class="detail-view container">
         <h3>Detail View</h3>
-        <section id="detail view"></section>
+        <section id="detail-view"></section>
       </section>
 
        <section class="add-view container">
