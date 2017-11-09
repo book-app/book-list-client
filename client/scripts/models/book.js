@@ -1,7 +1,7 @@
 'use strict';
 
-var app = {};
-var __API_URL__ = 'https://wr-jm-booklist.herokuapp.com';
+var app = app || {};
+var __API_URL__ = 'https://wr-jm-booklist.herokuapp.com'; // might be http://localhost:3000
 
 (function (module) {
   function errorCallback (err) {
@@ -24,7 +24,21 @@ var __API_URL__ = 'https://wr-jm-booklist.herokuapp.com';
   };
 
   Book.fetchAll = callback =>
-    $.get(`${__API_URL__}/api/v1/books`).then(Book.loadAll).then(callback).catch(errorCallback);
+    $.get(`${__API_URL__}/api/v1/books`)
+    .then(Book.loadAll)
+    .then(callback)
+    .catch(errorCallback);
+
+  Book.fetchOne = (ctx, callback) =>
+    $.get(`${__API_URL__}/api/v1/books/${ctx.params.book_id}`)
+    .then(results => ctx.book = results[0])
+    .then(callback)
+    .catch(errorCallback);
+
+  Book.create = book =>
+    $.post(`${__API_URL__}/api/v1/books`, book)
+    .then(() => page('/'))
+    .catch(errorCallback);
 
   module.Book = Book;
 })(app);
