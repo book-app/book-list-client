@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Book App</title>
+    <link rel="stylesheet" type="text/css" href="styles/reset.css">
     <link rel="stylesheet" type="text/css" href="styles/base.css">
     <link rel="stylesheet" type="text/css" href="styles/icons.css">
     <link rel="stylesheet" type="text/css" href="styles/layout.css">
     <link rel="stylesheet" type="text/css" href="styles/modules.css">
-    <link rel="stylesheet" type="text/css" href="styles/reset.css">
 
     <script type="text/x-handlebars-template" id="error-template">
       <h3>Oops, something went wrong</h3>
@@ -18,9 +18,9 @@
 
     <script id="book-list-template" type="text/x-handlebars-template">
       <li class="book-item">
-       <h4>Title: {{title}}</h4>
-       <p>Author: {{author}}</p>
-       <p>ISBN: {{isbn}}</p>
+       <h4>{{title}}</h4>
+       <p class="author">{{author}}</p>
+       <p>{{isbn}}</p>
        <img src="{{image_url}}"></img>
        <!-- <p>Desciption: {{description}}</p> -->
      </li>
@@ -28,11 +28,11 @@
 
     <script id="book-detail-template" type="text/x-handlebars-template">
       <li class="book-item">
-       <h4>Title: {{title}}</h4>
-       <p>Author: {{author}}</p>
-       <p>ISBN: {{isbn}}</p>
+       <h4>{{title}}</h4>
+       <p class="author">{{author}}</p>
+       <p class="isbn">{{isbn}}</p>
        <img src="{{image_url}}"></img>
-       <p>Desciption: {{description}}</p>
+       <p class"bottom">Desciption: {{description}}</p>
       </li>
     </script>
 
