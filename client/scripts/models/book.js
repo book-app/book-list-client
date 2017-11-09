@@ -1,7 +1,8 @@
 'use strict';
 
 var app = app || {};
-var __API_URL__ = 'https://wr-jm-booklist.herokuapp.com'; // might be http://localhost:3000
+// var __API_URL__ = 'https://wr-jm-booklist.herokuapp.com';
+var __API_URL__ = 'http://localhost:3000';
 
 (function (module) {
   function errorCallback (err) {
@@ -9,7 +10,7 @@ var __API_URL__ = 'https://wr-jm-booklist.herokuapp.com'; // might be http://loc
   }
 
   function Book(bookObject) {
-    Object.keys(bookObject).forEach(key => this[key] = taskObject[key]);
+    Object.keys(bookObject).forEach(key => this[key] = bookObject[key]);
   }
 
   Book.prototype.toHtml = function() {
