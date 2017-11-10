@@ -11,10 +11,10 @@ var app = app || {};
   };
 
   bookView.initDetailPage = function() {
-    // console.log(bookView.initIndexPage);
+    console.log('init detail page working');
     $('.container').hide();
     $('.detail-view').show();
-    // app.Book.all.map(book => $('#detail-view').append(book.toHtml()));
+    // bookView.map(book => $('#detail-view').append(book.toHtml()));
   };
 
 
@@ -22,7 +22,7 @@ var app = app || {};
     app.Book.fetchAll(bookView.initIndexPage);
   });
 
-  $('section').on('click', 'img', function(event) {
+  $('section').on('click', '.details', function() {
     app.Book.fetchOne(bookView.initDetailPage);
   });
 
