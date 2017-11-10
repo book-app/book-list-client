@@ -2,28 +2,36 @@
 var app = app || {};
 
 (function(module) {
+
   var bookView = {};
+
   bookView.initIndexPage = function() {
-    // console.log(bookView.initIndexPage);
-    $('.container').hide();
+    console.log(bookView.initIndexPage);
+    bookView.resetView();
     $('.book-view').show();
     app.Book.all.map(book => $('#book-list').append(book.toHtml()));
   };
 
   bookView.initDetailPage = function() {
-    console.log('init detail page working');
-    $('.container').hide();
+    console.log("initDetailPage", ctx);
+    // console.log(bookView.initIndexPage);
+    bookView.resetView();
     $('.detail-view').show();
-    // bookView.map(book => $('#detail-view').append(book.toHtml()));
+    $('.detail-view').empty();
+    let template = Handlebars.compile($('$detail-view').text());
+    $('.detail-view').append(tempalte(ctx));
+
   };
 
 
   $(document).ready(function() {
-    app.Book.fetchAll(bookView.initIndexPage);
+    Book.fetchAll(bookView.initIndexPage);
   });
 
-  $('section').on('click', '.details', function() {
-    app.Book.fetchOne(bookView.initDetailPage);
+  $('.book-view').on('click', '.details-button', function(event) {
+    console.log("deatils clicked", app.Book);
+    app.Book.fetchOne(ctx, bookView.initDetailPage);
+
   });
 
   bookView.initCreateFormPage = function() {
@@ -36,7 +44,7 @@ var app = app || {};
 
       let book = {
         author: event.target.author.value,
-        title: event.target.title.value, // repeat for all attributes
+        title: event.target.title.value,
         isbn: event.target.isbn.value,
         image_url: event.target.image_url.value,
         description: event.target.description.value
