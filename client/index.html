@@ -17,13 +17,19 @@
     </script>
 
     <script id="book-list-template" type="text/x-handlebars-template">
-      <li class="book-item">
+      <li class="book-view">
        <h4>{{title}}</h4>
        <p class="author">{{author}}</p>
        <p>{{isbn}}</p>
        <img src="{{image_url}}"></img>
-       <!-- <p>Desciption: {{description}}</p> -->
-     </li>
+           <div class="details-button"><a href="/books/{{book_id}}">Details</a></div>
+           <!-- <li class="details-button"><a href="/books/{{book_id}}">Details</a></li>
+           <li class="details-button"><a href="/books/{{book_id}}">Details</a></li> -->
+
+
+         <!-- </ul> -->
+       </li>
+
     </script>
 
     <script id="book-detail-template" type="text/x-handlebars-template">
@@ -56,13 +62,14 @@
       </section>
 
       <section class="book-view container">
-       <h3>My Books</h3>
-         <ul id="book-list"></ul>
+       <!-- <h3>My Books</h3> -->
+         <ul id="book-list">
+         </ul>
       </section>
 
       <section class="detail-view container">
-        <h3>Detail View</h3>
-        <section id="detail-view"></section>
+        <!-- <h3>Detail View</h3> -->
+        <ul id="detail-view"></ul>
       </section>
 
        <section class="add-view container">
