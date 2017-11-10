@@ -20,6 +20,7 @@ var app = app || {};
     $('.detail-view').empty();
     let template = Handlebars.compile($('$detail-view').text());
     $('.detail-view').append(tempalte(ctx));
+
   };
 
 
@@ -30,6 +31,7 @@ var app = app || {};
   $('.book-view').on('click', '.details-button', function(event) {
     console.log("deatils clicked", app.Book);
     app.Book.fetchOne(ctx, bookView.initDetailPage);
+
   });
 
   bookView.initCreateFormPage = function() {
