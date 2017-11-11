@@ -6,15 +6,12 @@ var app = app || {};
   var bookView = {};
 
   bookView.initIndexPage = function() {
-    console.log(bookView.initIndexPage);
     bookView.resetView();
     $('.book-view').show();
     app.Book.all.map(book => $('#book-list').append(book.toHtml()));
   };
 
   bookView.initDetailPage = function() {
-    console.log("initDetailPage", ctx);
-    // console.log(bookView.initIndexPage);
     bookView.resetView();
     $('.detail-view').show();
     $('.detail-view').empty();
@@ -25,21 +22,17 @@ var app = app || {};
 
 
   $(document).ready(function() {
-    Book.fetchAll(bookView.initIndexPage);
+    app.Book.fetchAll(bookView.initIndexPage);
   });
 
   $('.book-view').on('click', '.details-button', function(event) {
-    console.log("deatils clicked", app.Book);
     app.Book.fetchOne(ctx, bookView.initDetailPage);
-
   });
 
   bookView.initCreateFormPage = function() {
-    console.log('initCreateFormPage');
     bookView.resetView();
     $('.add-view').show();
     $('#add-form').on('submit', function(event) {
-      console.log('clicked!');
       event.preventDefault();
 
       let book = {
