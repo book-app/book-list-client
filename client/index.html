@@ -26,9 +26,7 @@
        <p>{{isbn}}</p>
        <img src="{{image_url}}"></img>
        <div class="details-button"><a href="books/{{book_id}}">Details</a></div>
-
       </li>
-
     </script>
 
     <script id="book-detail-template" type="text/x-handlebars-template">
@@ -38,8 +36,10 @@
        <p class="isbn">{{isbn}}</p>
        <img src="{{image_url}}"></img>
        <p class"bottom">Desciption: {{description}}</p>
+
        <div class="update-button"><a href="books/{{book_id}}/update">Update</a></div>
        <div class="delete-button"><a href="books/{{book_id}}/delete">Delete</a></div>
+
       </li>
     </script>
 
@@ -66,7 +66,9 @@
        <!-- <h3>My Books</h3> -->
          <ul id="book-list">
          </ul>
+
       </section>
+
 
       <section class="detail-view container">
         <!-- <h3>Detail View</h3> -->

@@ -37,11 +37,11 @@ var __API_URL__ = 'http://localhost:3000';
     .catch(errorCallback);
 
   Book.fetchOne = (ctx, callback) =>
-    console.log("Book.fetchOne", ctx)
     $.get(`${__API_URL__}/api/v1/books/:${ctx.params.book_id}`)
     .then(results => ctx.book = results[0])
     .then(callback)
     .catch(errorCallback);
+
 
   Book.create = book =>
     $.post(`${__API_URL__}/api/v1/books`, book)
