@@ -6,7 +6,7 @@ var app = app || {};
   var bookView = {};
 
   bookView.initIndexPage = function() {
-    console.log(bookView.initIndexPage);
+    console.log("initIndexPage", bookView.initIndexPage);
     bookView.resetView();
     $('.book-view').show();
     app.Book.all.map(book => $('#book-list').append(book.toHtml()));
@@ -23,9 +23,10 @@ var app = app || {};
   };
 
 
-  $(document).ready(function() {
-    Book.fetchAll(bookView.initIndexPage);
-  });
+  // $(document).ready(function() {
+  //   console.log(bookView.initIndexPage);
+  //   app.Book.fetchAll(bookView.initIndexPage);
+  // });
 
   $('.book-view').on('click', '.details-button', function(event) {
     console.log("deatils clicked", app.Book);
