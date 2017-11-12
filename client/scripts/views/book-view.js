@@ -20,7 +20,6 @@ var app = app || {};
 
   };
 
-
   $(document).ready(function() {
     app.Book.fetchAll(bookView.initIndexPage);
   });

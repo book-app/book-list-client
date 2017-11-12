@@ -11,6 +11,9 @@
     <link rel="stylesheet" type="text/css" href="styles/layout.css">
     <link rel="stylesheet" type="text/css" href="styles/modules.css">
 
+    <base href="." >
+    <!-- All relative paths are relative to the new base . -->
+
     <script type="text/x-handlebars-template" id="error-template">
       <h3>Oops, something went wrong</h3>
       <p>{{status}}: {{statusText}}</p>
@@ -22,13 +25,8 @@
        <p class="author">{{author}}</p>
        <p>{{isbn}}</p>
        <img src="{{image_url}}"></img>
-           <div class="details-button"><a href="/books/{{book_id}}">Details</a></div>
-           <!-- <li class="details-button"><a href="/books/{{book_id}}">Details</a></li>
-           <li class="details-button"><a href="/books/{{book_id}}">Details</a></li> -->
-
-
-         <!-- </ul> -->
-       </li>
+       <div class="details-button"><a href="books/{{book_id}}">Details</a></div>
+      </li>
     </script>
 
     <script id="book-detail-template" type="text/x-handlebars-template">
@@ -38,6 +36,9 @@
        <p class="isbn">{{isbn}}</p>
        <img src="{{image_url}}"></img>
        <p class"bottom">Desciption: {{description}}</p>
+
+       <div class="update-button"><a href="books/{{book_id}}/update">Update</a></div>
+       <div class="delete-button"><a href="books/{{book_id}}/delete">Delete</a></div>
 
       </li>
     </script>
